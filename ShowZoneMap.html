@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+<meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
+		<title>RMSL Zone Check</title>
+		<style>
+			html, body, #map-canvas {
+				height: 100%;
+				margin: 0px;
+				padding: 0px
+			}
+			#panel {
+				position: absolute;
+				top: 5px;
+				left: 50%;
+				margin-left: -180px;
+				z-index: 5;
+				background-color: #fff;
+				padding: 5px;
+				border: 1px solid #999;
+			}
+		  
+			fieldset {
+				width: 500px;
+			}
+			
+			label.field {
+				text-align: right;
+				width: 100px;
+				float: left;
+				font-weight: bold;
+			}
+			input.textbox-300 {
+				width: 300px;
+				float: left;
+			}
+			fieldset p {
+				clear:both;
+				padding: 5px;
+			}
+				
+		}
+			
+    </style>
+
+
+<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script>
+<script src="zoneCheck.js"></script>
+
+<script>google.maps.event.addDomListener(window, 'load', initialize);</script>
+
+  
+  </head>
+  <body>
+    <div id="map-canvas"></div>
+  </body>
+</html>
