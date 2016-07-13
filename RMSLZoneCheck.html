@@ -3,9 +3,18 @@
 
 <head>
 <meta content="text/html; charset=utf-8" http-equiv="Content-Type" />
-		<title>RMSL Zone Check</title>
+	<title>RMSL Zone Check</title>
 
+  <!--This script allows me to access the google api's.  You can also run an initializiong javascript if you like. -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCkgH5XmBN4OkG6-nSpk9zrT-iHPzHezQk&signed_in=true"></script>
+        
+  <!--     <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&signed_in=true&callback=initMap"
+        async defer></script>     -->   
+
+
+  <script type="text/javascript" src="maps.google.polygon.containsLatLng.js"></script>
   <script type="text/javascript" src="zoneCheck.js"></script>  
+
   
   </head>
   <body>
@@ -17,14 +26,16 @@
 			City<input type="text" id="idTextCity"name="city"></input><br />
 		</fieldset>
 		
-		<input type="button" onclick="zoneCheck()" value="Submit"></input>
-		<input type="button" onclick="resetFrom()" value="Reset Form"></input>
+		<input type="button" onclick="initialize()" value="Submit"></input>
+		<input type="button" onclick="resetForm()" value="Reset Form"></input>
+		
+		<div id="map"></div>
+	    <div id="capture"></div>
 
 	</form>
 
-
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCkgH5XmBN4OkG6-nSpk9zrT-iHPzHezQk&signed_in=true"
-        async defer></script>
+        
+        
 
 
 	<script>
