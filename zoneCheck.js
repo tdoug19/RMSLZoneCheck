@@ -1,4 +1,9 @@
-
+/**************************************************************
+* Author: Trevor Douglas
+*
+* Description:  This javascript file performs a zone check to 
+* 				determine which zone your address is in.
+**************************************************************/
 var poly
 var map;
 
@@ -54,10 +59,16 @@ function zoneCheck()
 {
 
 	var textAddress= document.getElementById("idTextAddress");
+	var textZone= document.getElementById("idTextZone");
 	var geocoder = new google.maps.Geocoder();	
+	
+	var geoCodeRequst = textAddress.value + ',' + document.getElementById("idTextCity").value
+	                                + ',' + document.getElementById("idTextProvince").value;
     
+	
+	console.log(geoCodeRequst);
 	//alert ("ADDR: " + textAddress.value);
-	geocoder.geocode({'address': textAddress.value}, function(results, status) {
+	geocoder.geocode({'address': geoCodeRequst}, function(results, status) {
     
 	
 		if (status === google.maps.GeocoderStatus.OK) {
@@ -73,13 +84,18 @@ function zoneCheck()
 		if( zone1.shape.containsLatLng(lat,lng))
 		{
 			console.log("You are in Zone 1");
+			textZone.value="Zone 1";
+		}
+		else if( zone2.shape.containsLatLng(lat,lng))
+		{
+			console.log("Probably in Zone 2");
+			textZone.value="Zone 2";
 		}
 		else
 		{
-			console.log("Probably in Zone 2");
+            console.log("Probably out of town");
+			textZone.value="Out of town";
 		}
-
-
 
 
 	});
